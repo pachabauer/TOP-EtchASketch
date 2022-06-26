@@ -2,16 +2,22 @@ body {
     background-color: #6B5B95;
 }
 
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+}
+
 .items {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
-    justify-content: center;
-    align-items: center;
-    border: rgba(0, 0, 0,0.03);
     border-radius: 3px;
-    font-size: 18px;    
+    font-size: 8px; 
+    grid-template-rows: repeat(var(--grid-rows),auto);
+    grid-template-columns: repeat(var(--grid-cols),auto); 
+    justify-content: center;
 }
 
 .item {
     background-color: whitesmoke;
+    border: 0.02px solid black;
 }
+
