@@ -11,8 +11,8 @@ body {
     display: grid;
     border-radius: 3px;
     font-size: 8px; 
-    grid-template-rows: repeat(var(--grid-rows),auto);
-    grid-template-columns: repeat(var(--grid-cols),auto); 
+    grid-template-rows: repeat(var(--grid-rows),100px);
+    grid-template-columns: repeat(var(--grid-cols),100px); 
     justify-content: center;
 }
 
