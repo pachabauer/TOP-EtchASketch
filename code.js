@@ -11,7 +11,6 @@ const clear  =document.createElement('button');
 const div3 = document.createElement("div");
 const inputColorButton = document.createElement("input");
 
-
 // variable add classes
 title.classList.add('titulo');
 buttons.classList.add('buttons')
@@ -44,15 +43,57 @@ function createGrid(rows, cols) {
     items.appendChild(cell).className = "item";
   }
 }
-createGrid(5, 5); // here i could relate the prompt
+createGrid(5, 5); // here i could put the prompt
 
 // create the color picker
-let colorInput = document.querySelector("#color"); 
-let hexInput = document.querySelector("#hex");
+let butColorPicker = document.querySelector('#color');
+butColorPicker.addEventListener('click',colorPicker);
+
+function colorPicker() {
 const item = document.querySelectorAll(".item");
 item.forEach((i) => {
   i.addEventListener("mouseenter", function () {
-    let color = colorInput.value;
+    let color = butColorPicker.value;
     i.style.background = color;
   });
 });
+}
+
+// create the black picker
+let butBlackPicker = document.querySelector(".black"); 
+butBlackPicker.addEventListener('click',blackPicker);
+
+function blackPicker() {
+const item = document.querySelectorAll(".item");
+item.forEach((i) => {
+  i.addEventListener("mouseenter", function () {
+    i.style.background = "#252525";
+  });
+});
+}
+
+// create the rainbow picker
+let butRainbowPicker = document.querySelector(".rainbow"); 
+butRainbowPicker.addEventListener('click',rainbowPicker);
+
+function rainbowPicker() {
+const item = document.querySelectorAll(".item");
+item.forEach((i) => {
+  i.addEventListener("mouseenter", function () {
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    i.style.background = `#${randomColor}`;
+  });
+});
+}
+
+// create the clear picker
+let butClearPicker = document.querySelector(".clear"); 
+butClearPicker.addEventListener('click',clearPicker);
+
+function clearPicker() {
+const item = document.querySelectorAll(".item");
+item.forEach((i) => {
+  i.style.background = "#E8fafa";
+});
+blackPicker();
+}
