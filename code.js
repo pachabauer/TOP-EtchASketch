@@ -10,6 +10,8 @@ const clear  =document.createElement('button');
 
 const div3 = document.createElement("div");
 const inputColorButton = document.createElement("input");
+const createInputSlider = document.createElement('input');
+const createOutputSlider = document.createElement('output');
 
 // variable add classes
 title.classList.add('titulo');
@@ -17,6 +19,9 @@ buttons.classList.add('buttons')
 p1.classList.add('p1Color');
 div3.classList.add("items");
 black.classList.add("black");
+createInputSlider.classList.add("slider");
+createOutputSlider.classList.add("sliderOutput");
+
 rainbow.classList.add("rainbow");
 clear.classList.add("clear");
 
@@ -24,13 +29,22 @@ clear.classList.add("clear");
 title.textContent = "Etch a Sketch";
 inputColorButton.type = "color";
 inputColorButton.setAttribute("id","color");
+
+createInputSlider.type = "range";
+createInputSlider.setAttribute("min",2);
+createInputSlider.setAttribute("max",100);
+createInputSlider.setAttribute("value",10);
+createInputSlider.setAttribute("id","myRange");
+createInputSlider.setAttribute("oninput","this.nextElementSibling.value = this.value");
+
 p1.textContent = "Pick a color";
 black.textContent = "Just Black"
 rainbow.textContent = "Rainbow"
 clear.textContent = "Reset";
+createOutputSlider.textContent = 10;
 
 // append
-buttons.append(inputColorButton,p1,black,rainbow,clear);
+buttons.append(inputColorButton,p1,black,createInputSlider,createOutputSlider,rainbow,clear);
 body.append(title,buttons,div3);
 
 // create the grid
@@ -43,7 +57,7 @@ function createGrid(rows, cols) {
     items.appendChild(cell).className = "item";
   }
 }
-createGrid(5, 5); // here i could put the prompt
+createGrid(7, 7); // here i could put the prompt
 
 // create the color picker
 let butColorPicker = document.querySelector('#color');
