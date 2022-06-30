@@ -46,7 +46,7 @@ black.textContent = "Just Black"
 rainbow.textContent = "Rainbow"
 clear.textContent = "Reset";
 footer.textContent = "created by pachaB"
-createOutputSlider.textContent = 10;
+createOutputSlider.textContent = createInputSlider.value;
 
 // append
 buttons.append(inputColorButton,p1,black,createInputSlider,createOutputSlider,rainbow,clear);
@@ -62,7 +62,20 @@ function createGrid(rows, cols) {
     items.appendChild(cell).className = "item";
   }
 }
-createGrid(14, 14); // here i could put the prompt
+createGrid(5, 5); // here i could put the prompt
+
+createInputSlider.oninput = function () {
+  createOutputSlider.textContent = this.value;
+  let abc = createOutputSlider.textContent
+  removeAllChildNodes(items);
+  createGrid(abc, abc);
+}
+
+function removeAllChildNodes(parent){
+  while(parent.firstChild){
+      parent.removeChild(parent.firstChild);
+  }
+}
 
 // create the color picker
 let butColorPicker = document.querySelector('#color');
@@ -116,3 +129,5 @@ item.forEach((i) => {
 });
 blackPicker();
 }
+
+

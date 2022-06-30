@@ -1,9 +1,10 @@
 body {
     display:grid;
     grid-template-columns: repeat(15,80px);
-    grid-template-rows: repeat(15,70px);
+    grid-template-rows: repeat(15,63px);
     background-color: #fc3153;
     justify-content: center;
+    
   }
 
 :root {
@@ -60,12 +61,13 @@ body {
 .items {
     display: grid;
     justify-content: center;
-    grid-row: 6 / 12;
+    grid-row: 6 / 14;
     grid-column: 1 / 16;
     border-radius: 3px;
     font-size: 8px; 
     grid-template-rows: repeat(var(--grid-rows),auto-fit);
-    grid-template-columns: repeat(var(--grid-cols),100px); 
+    grid-template-columns: repeat(var(--grid-cols),minmax(12px, 600px)); 
+    
 }
 
 .item {
@@ -82,8 +84,6 @@ body {
     grid-column-start: 1;
     grid-row-start: 1;
 }
-
-
 
 .p1Color,.black,.slider,.sliderOutput,.rainbow,.clear {
     display: grid;
@@ -127,9 +127,7 @@ body {
     grid-row-start: 1;
     position:inherit;
 
-
 }
-
 
 .rainbow {
     background-image: linear-gradient(
@@ -159,7 +157,7 @@ body {
 
 .footer { 
     background-color: #252525;
-    grid-row-start: 15;
+    grid-row-start: -1;
     grid-column: 1 / -1;
     display: grid;
     grid-column: 1/-1;
