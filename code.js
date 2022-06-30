@@ -13,6 +13,8 @@ const inputColorButton = document.createElement("input");
 const createInputSlider = document.createElement('input');
 const createOutputSlider = document.createElement('output');
 
+const footer = document.createElement("div");
+
 // variable add classes
 title.classList.add('titulo');
 buttons.classList.add('buttons')
@@ -24,6 +26,8 @@ createOutputSlider.classList.add("sliderOutput");
 
 rainbow.classList.add("rainbow");
 clear.classList.add("clear");
+
+footer.classList.add('footer');
 
 // variable set attributes
 title.textContent = "Etch a Sketch";
@@ -41,11 +45,12 @@ p1.textContent = "Pick a color";
 black.textContent = "Just Black"
 rainbow.textContent = "Rainbow"
 clear.textContent = "Reset";
+footer.textContent = "created by pachaB"
 createOutputSlider.textContent = 10;
 
 // append
 buttons.append(inputColorButton,p1,black,createInputSlider,createOutputSlider,rainbow,clear);
-body.append(title,buttons,div3);
+body.append(title,buttons,div3,footer);
 
 // create the grid
 const items = document.querySelector(".items");
@@ -57,7 +62,7 @@ function createGrid(rows, cols) {
     items.appendChild(cell).className = "item";
   }
 }
-createGrid(7, 7); // here i could put the prompt
+createGrid(14, 14); // here i could put the prompt
 
 // create the color picker
 let butColorPicker = document.querySelector('#color');
