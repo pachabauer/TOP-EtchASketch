@@ -62,7 +62,7 @@ function createGrid(rows, cols) {
     items.appendChild(cell).className = "item";
   }
 }
-createGrid(5, 5); // here i could put the prompt
+createGrid(10, 10); // here i could put the prompt
 
 createInputSlider.oninput = function () {
   createOutputSlider.textContent = this.value;

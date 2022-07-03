@@ -14,7 +14,7 @@ body {
 
 @font-face {
     font-family: Luckiest guy;
-    src: url(/fonts/LuckiestGuy-Regular.ttf);
+    src: url(fonts/LuckiestGuy-Regular.ttf);
   }
 
 .titulo {
